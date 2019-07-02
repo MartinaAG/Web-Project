@@ -1,0 +1,58 @@
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+header, article, footer {
+	width: 70%;
+	right: 10%;
+	height: 10%;
+	margin: auto;
+	background-color: lightgreen;
+	position: relative;
+}
+
+#headerFooterProperties {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	display: none;
+
+	&>* {
+		margin: 5px 0px;
+	}
+
+	#color-wheel {
+		display: none;
+	}
+
+	#color-wheel-mock {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: lightgreen;
+		border: 3px solid black;
+	}
+
+	#size {
+		width: 20px;
+		color: white;
+	}
+}
+
+article {
+	height: 80%;
+	background-color: purple;
+}
+
+footer {
+	height: 10%;
+	background-color: red;
+}
