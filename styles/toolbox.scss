@@ -50,12 +50,12 @@
 		border: 1px solid purple;
 	}
 
-	&#one div.sth {
+	&.one div.sth {
 		width: 50%;
 		padding-top: 50%;
 	}
 
-	&#two {
+	&.two {
 		grid-template-columns: auto auto;
 
 		div.sth {
@@ -64,7 +64,7 @@
 		}
 	}
 
-	&#three-two-column {
+	&.three-two-column {
 		grid-template-columns: auto auto;
 
 		div.sth {
@@ -87,7 +87,7 @@
 		}
 	}
 
-	&#three {
+	&.three {
 		grid-template-columns: auto auto auto;
 
 		div.sth {
@@ -96,7 +96,7 @@
 		}
 	}
 
-	&#three-two-row {
+	&.three-two-row {
 		grid-template-columns: auto auto;
 
 		div.sth {
