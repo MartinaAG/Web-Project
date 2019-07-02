@@ -64,7 +64,7 @@
 		}
 	}
 
-	&.three-two-column {
+	&.left-three-two-column, &.right-three-two-column {
 		grid-template-columns: auto auto;
 
 		div.sth {
@@ -77,15 +77,16 @@
 				padding-top: 80%;
 			}
 		}
-
-		&.left div.sth:nth-child(3) {
-			grid-column-start: 2;
-		}
-
-		&.right div.sth:nth-child(3) {
-			grid-column-start: 1;
-		}
 	}
+
+	&.left-three-two-column div.sth:nth-child(3) {
+			grid-column-start: 2;
+	}
+
+	&.right-three-two-column div.sth:nth-child(3) {
+			grid-column-start: 1;
+	}
+	
 
 	&.three {
 		grid-template-columns: auto auto auto;
