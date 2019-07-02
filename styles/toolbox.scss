@@ -1,8 +1,8 @@
 #toolbox {
 	width: 420px;
-	border: 1px solid gray;
 
 	h1 {
+		font-size: 220%;
 		text-align: center;
 	}
 
@@ -17,15 +17,14 @@
 	width: 180px;
 	height: 100px;
 
-	border: 1px solid gray;
+	border: 1px solid rgb(14, 15, 54);
 	border-radius: 5px;
 	cursor: pointer;
 	box-shadow: 2px 2px 2px;
 	transition: background-color 0.25s, transform 0.25s;
-	background-color: gray;
 
 	&:hover {
-		background-color: lightgray;
+		background-color: lightgrey;
 		transform: scale(1.01);
 
 		& div.sth {
@@ -43,11 +42,9 @@
 	margin: 10px;
 	width: 500px;
 	display: grid;
-	border: 1px solid purple;
 
 	div.sth {
 		margin: auto;
-		border: 1px solid purple;
 	}
 
 	&.one div.sth {
@@ -111,4 +108,17 @@
 			}
 		}
 	}
+}
+
+.layout .sth {
+	position: relative;
+	border: 1.5px solid black;
+}
+
+.plusSignImg {
+	width: 40%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

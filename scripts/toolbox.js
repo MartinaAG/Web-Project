@@ -7,9 +7,17 @@ function addSection(className, numberOfSth) {
 	for(var i = 0; i < numberOfSth; i++){
 		var div = document.createElement('div');
 		div.classList.add('sth');
+		addimage(div);
 		layout.appendChild(div, null);
 	}
 	
 	section.appendChild(layout, null);
 	document.body.appendChild(section, null);
 }
+
+function addimage(where) { 
+	var img = document.createElement("img");
+	img.classList.add('plusSignImg');
+	img.src = "images/plusSign.png"; 	
+	where.appendChild(img);
+  }
