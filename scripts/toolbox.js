@@ -3,11 +3,13 @@ function addSection(className, numberOfSth) {
 	var layout = document.createElement('div');
 	layout.classList.add('layout');
 	layout.classList.add(className);
+	layout.classList.add('dropdown');
 
-	for(var i = 0; i < numberOfSth; i++){
+
+	for(var i = 0; i < numberOfSth; i++) {
 		var div = document.createElement('div');
 		div.classList.add('sth');
-		addimage(div);
+		addImage(div);
 		layout.appendChild(div, null);
 	}
 	
@@ -15,9 +17,21 @@ function addSection(className, numberOfSth) {
 	document.body.appendChild(section, null);
 }
 
-function addimage(where) { 
+function addImage(where) { 
 	var img = document.createElement("img");
 	img.classList.add('plusSignImg');
-	img.src = "images/plusSign.png"; 	
+	img.classList.add('dropbtn');
+	img.src = "images/plusSign.png"; 
 	where.appendChild(img);
-  }
+	img.addEventListener("mouseover", function() {
+		var content = document.getElementById("content");
+		where.appendChild(content);
+		img.style.opacity = "0";
+	})
+	img.addEventListener("mouseleave", function() {
+		img.style.opacity = "1";
+	} )
+}
+
+
+  
