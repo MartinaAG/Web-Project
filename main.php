@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Startup Page Designer</title>
 	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/toolbox.css">
 </head>
 <body>
 	<header class="propertable" id="docHeader" style="background-color: gray; height: 10%">
@@ -15,6 +16,10 @@
 	
 	<footer class="propertable" id="docFooter" style="background-color: gray;">
 	</footer>
+
+	<aside>
+		<?php include('toolbox.html') ?>
+	</aside>
 
 	<div id="properties">
 		<div id="color">&nbsp;</div>
