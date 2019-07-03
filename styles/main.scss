@@ -12,14 +12,13 @@ body {
 
 header, article, footer {
 	width: 70%;
-	right: 10%;
-	height: 10%;
+	left: 10%;
 	margin: auto;
 	background-color: lightgreen;
 	position: relative;
 }
 
-#headerFooterProperties {
+#properties {
 	position: absolute;
 	left: 10px;
 	top: 10px;
@@ -33,7 +32,7 @@ header, article, footer {
 		display: none;
 	}
 
-	#color-wheel-mock {
+	#color {
 		width: 20px;
 		height: 20px;
 		border-radius: 50%;
@@ -47,12 +46,19 @@ header, article, footer {
 	}
 }
 
+header, footer {
+	z-index: 1;
+	position: fixed;
+	height: 10%;
+}
+
 article {
 	height: 80%;
+	position: absolute;
 	background-color: purple;
 }
 
 footer {
-	height: 10%;
+	bottom: 0;
 	background-color: red;
 }

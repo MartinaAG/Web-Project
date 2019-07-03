@@ -12,44 +12,50 @@ body {
 
 header, article, footer {
   width: 70%;
-  right: 10%;
-  height: 10%;
+  left: 10%;
   margin: auto;
   background-color: lightgreen;
   position: relative;
 }
 
-#headerFooterProperties {
+#properties {
   position: absolute;
   left: 10px;
   top: 10px;
   display: none;
 }
-#headerFooterProperties > * {
+#properties > * {
   margin: 5px 0px;
 }
-#headerFooterProperties #color-wheel {
+#properties #color-wheel {
   display: none;
 }
-#headerFooterProperties #color-wheel-mock {
+#properties #color {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: lightgreen;
   border: 3px solid black;
 }
-#headerFooterProperties #size {
+#properties #size {
   width: 20px;
   color: white;
 }
 
+header, footer {
+  z-index: 1;
+  position: fixed;
+  height: 10%;
+}
+
 article {
   height: 80%;
+  position: absolute;
   background-color: purple;
 }
 
 footer {
-  height: 10%;
+  bottom: 0;
   background-color: red;
 }
 
