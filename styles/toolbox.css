@@ -1,11 +1,16 @@
-#toolbox {
-  width: 420px;
+aside {
+  width: 20%;
+  position: absolute;
+  right: 0;
 }
-#toolbox h1 {
+aside #toolbox {
+  width: 100%;
+}
+aside #toolbox h1 {
   font-size: 220%;
   text-align: center;
 }
-#toolbox #layouts {
+aside #toolbox #layouts {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -29,12 +34,14 @@
 }
 #layouts .layout div.sth {
   background-image: url("../images/something.png");
-  background-size: 100% 100%;
+  background-size: 68% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .layout {
-  margin: 10px;
-  width: 500px;
+  margin: 10px auto;
+  width: 85%;
   display: grid;
 }
 .layout div.sth {
@@ -42,26 +49,26 @@
 }
 .layout.one div.sth {
   width: 50%;
-  padding-top: 50%;
+  padding-top: 34%;
 }
 .layout.two {
   grid-template-columns: auto auto;
 }
 .layout.two div.sth {
   width: 80%;
-  padding-top: 80%;
+  padding-top: 54.4%;
 }
 .layout.left-three-two-column, .layout.right-three-two-column {
   grid-template-columns: auto auto;
 }
 .layout.left-three-two-column div.sth, .layout.right-three-two-column div.sth {
   width: 40%;
-  padding-top: 40%;
+  padding-top: 27.2%;
 }
 .layout.left-three-two-column div.sth:nth-child(3), .layout.right-three-two-column div.sth:nth-child(3) {
   grid-row: 1/3;
   width: 80%;
-  padding-top: 80%;
+  padding-top: 54.4%;
 }
 .layout.left-three-two-column div.sth:nth-child(3) {
   grid-column-start: 2;
@@ -74,18 +81,18 @@
 }
 .layout.three div.sth {
   width: 80%;
-  padding-top: 80%;
+  padding-top: 54.4%;
 }
 .layout.three-two-row {
   grid-template-columns: auto auto;
 }
 .layout.three-two-row div.sth {
   width: 50%;
-  padding-top: 50%;
+  padding-top: 34%;
 }
 .layout.three-two-row div.sth:nth-child(1) {
   width: 25%;
-  padding-top: 25%;
+  padding-top: 17%;
   grid-column: 1/3;
 }
 
@@ -108,6 +115,19 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+textarea.input, p.input {
+  font-size: 2em;
+  margin: 0;
+  word-break: break-all;
+  font-family: Arial;
+  padding: 0px;
+}
+
+p.input:hover {
+  color: red;
+  cursor: pointer;
 }
 
 .dropbtn {

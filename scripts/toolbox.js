@@ -1,10 +1,8 @@
 function addSection(className, numberOfSth) {
-	var section = document.createElement('section');
 	var layout = document.createElement('div');
 	layout.classList.add('layout');
 	layout.classList.add(className);
 	layout.classList.add('dropdown');
-
 
 	for(var i = 0; i < numberOfSth; i++) {
 		var div = document.createElement('div');
@@ -12,9 +10,9 @@ function addSection(className, numberOfSth) {
 		addImage(div);
 		layout.appendChild(div, null);
 	}
-	
-	section.appendChild(layout, null);
-	document.body.appendChild(section, null);
+
+	var docMain = document.getElementById('docMain');
+	docMain.appendChild(layout, null);
 }
 
 function addImage(where) { 
@@ -35,12 +33,34 @@ function addImage(where) {
 }
 
 function addTextInSth(target) {
-	var a = target.parentElement.parentElement;
-	a.querySelector("img.dropbtn").remove();
-	var input = document.createElement("input");
-	input.type = "text";
-	input.classList.add("input");
-	a.appendChild(input);
+	var parent = target.parentElement.parentElement;
+	parent.querySelector("img.dropbtn").remove();
+	
+	var textarea = document.createElement("textarea");
+	textarea.classList.add("input");
+	parent.appendChild(textarea);
+
+	var p = document.createElement('p');
+	p.classList.add("input");
+	p.style.display = "none";
+	parent.appendChild(p);
+
+	textarea.addEventListener("blur", function() {
+		if(textarea.value.length == 0) {
+			return;
+		}
+		p.innerText = textarea.value;
+		p.style.width = textarea.style.width;
+		p.style.height = textarea.style.height;
+		textarea.style.display = "none";
+		p.style.display = "block";
+	});
+
+	p.addEventListener("click", function() {
+		textarea.style.display = "block";
+		p.style.display = "none";
+	});
+
 	var content = document.getElementById("content");
 	content.style.display = "none";
 }
