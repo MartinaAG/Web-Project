@@ -102,6 +102,14 @@
   transform: translate(-50%, -50%);
 }
 
+.input {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .dropbtn {
   border: none;
   display: block;
@@ -115,7 +123,7 @@
   position: absolute;
   z-index: 1;
   background-color: #f1f1f1;
-  min-width: 160px;
+  width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
