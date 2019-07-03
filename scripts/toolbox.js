@@ -26,6 +26,7 @@ function addImage(where) {
 	img.addEventListener("mouseover", function() {
 		var content = document.getElementById("content");
 		where.appendChild(content);
+		content.style.display = "block";
 		img.style.opacity = "0";
 	})
 	img.addEventListener("mouseleave", function() {
@@ -33,5 +34,37 @@ function addImage(where) {
 	} )
 }
 
+function addTextInSth(target) {
+	var a = target.parentElement.parentElement;
+	a.querySelector("img.dropbtn").remove();
+	var input = document.createElement("input");
+	input.type = "text";
+	input.classList.add("input");
+	a.appendChild(input);
+	var content = document.getElementById("content");
+	content.style.display = "none";
+}
+
+function addImageInSth(target) {
+	var a = target.parentElement.parentElement;
+	a.querySelector("img.dropbtn").remove();
+	var input = document.createElement("input");
+	input.type = "file";
+	input.classList.add("input");
+	a.appendChild(input);
+	var content = document.getElementById("content");
+	content.style.display = "none";
+}
+
+function addBtnInSth(target) {
+	var a = target.parentElement.parentElement;
+	a.querySelector("img.dropbtn").remove();
+	var button = document.createElement("button");
+	button.innerText = "Feedback";
+	button.classList.add("input");
+	a.appendChild(button);
+	var content = document.getElementById("content");
+	content.style.display = "none";
+}
 
   
