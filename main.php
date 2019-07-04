@@ -6,6 +6,7 @@
 	<title>Startup Page Designer</title>
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/toolbox.css">
+	<link rel="stylesheet" href="styles/feedback.css">
 </head>
 <body>
 	<header class="propertable" id="docHeader" style="background-color: gray; height: 10%">
@@ -20,6 +21,10 @@
 	<aside>
 		<?php include('toolbox.html') ?>
 	</aside>
+
+	<?php include('feedback.html') ?>
+
+
 
 	<div id="properties">
 		<div id="color">&nbsp;</div>

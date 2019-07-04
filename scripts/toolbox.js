@@ -81,10 +81,30 @@ function addBtnInSth(target) {
 	a.querySelector("img.dropbtn").remove();
 	var button = document.createElement("button");
 	button.innerText = "Feedback";
+	button.id = "feedbackButton";
+	var modal = document.getElementById('myModal');
+    
+	button.onclick = function() { 
+		modal.style.visibility = "visible";
+		modal.children[0].style.top = '50px';
+	}
 	button.classList.add("input");
 	a.appendChild(button);
 	var content = document.getElementById("content");
 	content.style.display = "none";
+
+	var close = document.getElementById	("close");
+
+	close.onclick = function() {
+		modal.style.visibility = "hidden";
+	}
+
+	window.onclick = function(event) {
+		if (event.target == modal) {
+		  modal.style.display = "none";
+		}
+	  
+	}
 }
 
   
