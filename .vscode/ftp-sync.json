@@ -1,0 +1,27 @@
+{
+    "remotePath": "./public_html/bebsi",
+    "host": "files.000webhost.com",
+    "username": "startup-page-creator",
+    "password": "247cQW56rl50918A6O8e7T828@Gh6I",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": "\\"
+    }
+}

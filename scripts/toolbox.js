@@ -69,7 +69,7 @@ function addImageInSth(target) {
 	var a = target.parentElement.parentElement;
 	a.querySelector("img.dropbtn").remove();
 	var input = document.createElement("input");
-	input.type = "file";
+	input.type = "file"; 
 	input.classList.add("input");
 	a.appendChild(input);
 	var content = document.getElementById("content");
@@ -82,9 +82,52 @@ function addBtnInSth(target) {
 	var button = document.createElement("button");
 	button.innerText = "Feedback";
 	button.classList.add("input");
+	button.setAttribute('data-properties-index', 'text');
 	a.appendChild(button);
+	attachPropertiesEvents(target.parentElement, 'text', false);
 	var content = document.getElementById("content");
 	content.style.display = "none";
 }
 
-  
+function attachPropertiesEvents(realTarget, identifier, isTag) {
+	realTarget.addEventListener('mouseover', (event) => {
+		if(event.target.getAttribute('data-properties-index') != identifier) {
+		
+			return;
+		}
+		var target = event.target;
+
+		var properties = document.getElementById('properties');
+		var activeProps = activeProperties.get(identifier, isTag);
+		for(var i = 0; i < properties.children.length; i++) {
+			var child = properties.children[i];
+			var isPropActive = false;
+			for(var j = 0; j < activeProps.length; j++) {
+				if(activeProps[j] == child.id) {
+					isPropActive = true;
+				}
+			}
+
+			if(isPropActive) {
+				child.style.display = "block";
+			} else {
+				child.style.display = "none";
+			}
+		}
+		target.appendChild(properties);
+		properties.style.display = "block";
+
+		var mock = document.getElementById('color');
+		mock.style.backgroundColor = target.style.backgroundColor;
+
+		if(target.style.backgroundColor === 'rgb(0, 0, 0)') {
+			mock.style.border = '2px solid white';
+		} else {
+			mock.style.border = '2px solid black';
+		}
+	}, true);
+
+	realTarget.addEventListener('mouseleave', (event) => {
+		document.getElementById('properties').style.display = "none";
+	});
+}
