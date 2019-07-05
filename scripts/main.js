@@ -35,11 +35,20 @@ document.getElementById('color').addEventListener('click', (event) => {
 	input.click();
 });
 
-function uploadImage() {
-	fetch('upload.php', { 
-		method: 'POST'
-	}).then(res => res.text()).then(res => console.log(res));
-
+function uploadImage(target) {
+	var photo = target.files[0];
+	var image = target.parentElement.nextElementSibling;
+	var formData = new FormData();
+	
+	formData.append("image", photo);
+	fetch('upload.php', {
+		method: "POST",
+		body: formData
+	}).then(res => res.text())
+	.then(res => {
+		image.style.zIndex = 0;
+		image.style.backgroundImage = "url('"  + res + "')";
+	});
 }
 
 document.getElementById('size').addEventListener('mouseup', (event) => {

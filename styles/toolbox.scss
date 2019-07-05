@@ -62,6 +62,11 @@ aside {
 		padding-top: $ratio * 50%;
 	}
 
+	&.headerLayout {
+		width: 40%;
+		padding-top: $ratio * 40%;
+	}
+
 	&.two {
 		grid-template-columns: auto auto;
 

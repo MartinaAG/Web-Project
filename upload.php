@@ -1,27 +1,32 @@
 <?php
-	echo $_FILES["fileToUpload"]["name"];die();
+    $image = $_FILES['image'];
+   
+    // check if the file exists
+    if (!file_exists($image['tmp_name']))
+        throw new Exception('Image file is missing in the server');
+    $maxFileSize = 2 * 10e6; // in bytes
+    if ($image['size'] > $maxFileSize)
+        throw new Exception('Max size limit exceeded'); 
+    // check if uploaded file is an image
+    $imageData = getimagesize($image['tmp_name']);
+    if (!$imageData) 
+        throw new Exception('Invalid image');
+    $mimeType = $imageData['mime'];
+    // validate mime type
+    $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    if (!in_array($mimeType, $allowedMimeTypes)) 
+        throw new Exception('Only JPEG, PNG and GIFs are allowed');
+    
+    // nice! it's a valid image
+    // get file extension (ex: jpg, png) not (.jpg)
+    $fileExtention = strtolower(pathinfo($image['name'] ,PATHINFO_EXTENSION));
+    // create random name for your image
+    $fileName = round(microtime(true)) . mt_rand() . '.' . $fileExtention; // anyfilename.jpg
+    // Create the path starting from DOCUMENT ROOT of your website
+    $path = 'uploads/' . $fileName;
 
-	$target_dir = "uploads/";
-	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-	$uploadOk = 1;
-	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-	// Check if image file is a actual image or fake image
-	if(isset($_POST["submit"])) {
-		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-		if($check !== false) {
-			echo "File is an image - " . $check["mime"] . ".";
-			$uploadOk = 1;
-		} else {
-			echo "File is not an image.";
-			$uploadOk = 0;
-		}
-	}
+    if (!move_uploaded_file($image['tmp_name'], $path))
+        throw new Exception('Error in moving the uploaded file');
 
-	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-
-
+    echo $path;
 ?>

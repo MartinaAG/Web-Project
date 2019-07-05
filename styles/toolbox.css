@@ -51,6 +51,10 @@ aside #toolbox #layouts {
   width: 50%;
   padding-top: 34%;
 }
+.layout.headerLayout {
+  width: 40%;
+  padding-top: 27.2%;
+}
 .layout.two {
   grid-template-columns: auto auto;
 }

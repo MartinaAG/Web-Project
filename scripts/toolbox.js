@@ -15,6 +15,8 @@ function addSection(className, numberOfSth) {
 	docMain.appendChild(layout, null);
 }
 
+// addSection('headerLayout', 1);
+
 function addImage(where) { 
 	var img = document.createElement("img");
 	img.classList.add('plusSignImg');
@@ -66,14 +68,32 @@ function addTextInSth(target) {
 }
 
 function addImageInSth(target) {
-	var a = target.parentElement.parentElement;
-	a.querySelector("img.dropbtn").remove();
-	var input = document.createElement("input");
-	input.type = "file"; 
-	input.classList.add("input");
-	a.appendChild(input);
+	var parent = target.parentElement.parentElement;
+	parent.querySelector("img.dropbtn").remove();
+	
 	var content = document.getElementById("content");
 	content.style.display = "none";
+	var form = document.createElement("form");
+	var inputFile = document.createElement("input");
+	inputFile.id = "image-file";
+	inputFile.type = "file";
+	inputFile.classList.add("input");
+	form.appendChild(inputFile);
+	var inputSubmit = document.createElement("input");
+	inputSubmit.type = "submit";
+	inputSubmit.classList.add("input");
+	inputSubmit.style.top = "60%";
+	inputSubmit.onclick = function(event) {
+		uploadImage(inputFile);
+		form.remove();
+		return false;
+	};
+	form.appendChild(inputSubmit);
+	var resultImage = document.createElement("div");
+	resultImage.classList.add("resultImage");
+	
+	parent.appendChild(form);
+	parent.appendChild(resultImage);
 }
 
 function addBtnInSth(target) {
@@ -108,10 +128,10 @@ function addBtnInSth(target) {
 
 function attachPropertiesEvents(realTarget, identifier, isTag) {
 	realTarget.addEventListener('mouseover', (event) => {
-		if(event.target.getAttribute('data-properties-index') != identifier) {
+		// if(event.target.getAttribute('data-properties-index') != identifier) {
 		
-			return;
-		}
+		// 	return;
+		// }
 		var target = event.target;
 
 		var properties = document.getElementById('properties');
