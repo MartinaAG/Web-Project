@@ -13,14 +13,14 @@
 		
 	</header>
 	
-	<article class="propertableByTag" id="docMain" style="background-color: white; top: 10%;">
+	<article class="propertableByTag" id="docMain" style="background-color: white; top: 10%; bottom: 12%">
 		
 	</article>
 	
-	<footer class="propertableByTag" id="docFooter" style="background-color: gray;">
+	<footer class="propertableByTag" id="docFooter" style="background-color: gray; height: 10%">
 	</footer>
 
-	<aside>
+	<aside class="asideSection">
 		<?php include('toolbox.html') ?>
 	</aside>
 

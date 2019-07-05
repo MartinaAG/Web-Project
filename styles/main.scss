@@ -1,10 +1,4 @@
-html {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-}
-
-body {
+html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -50,6 +44,10 @@ header, footer {
 	z-index: 1;
 	position: fixed;
 	height: 10%;
+}
+
+.asideSection {
+	position: fixed;
 }
 
 article {

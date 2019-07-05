@@ -15,7 +15,6 @@ function addSection(className, numberOfSth) {
 	docMain.appendChild(layout, null);
 }
 
-// addSection('headerLayout', 1);
 
 function addImage(where) { 
 	var img = document.createElement("img");
