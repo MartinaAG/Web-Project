@@ -100,8 +100,8 @@ function addBtnInSth(target) {
 	var a = target.parentElement.parentElement;
 	a.querySelector("img.dropbtn").remove();
 	var button = document.createElement("button");
-	button.innerText = "Feedback";
-	button.id = "feedbackButton";
+	button.innerText = "Обратна връзка";
+	button.classList = "feedbackButton";
 	var modal = document.getElementById('myModal');
     
 	button.onclick = function() { 
@@ -121,9 +121,9 @@ function addBtnInSth(target) {
 		modal.style.visibility = "hidden";
 	}
 
-	modal.onclick = function(event) {
-		  modal.style.display = "none";	  
-	}
+	// modal.onclick = function(event) {
+	// 	  modal.style.display = "none";	  
+	// }
 }
 
 function attachPropertiesEvents(realTarget, identifier, isTag) {

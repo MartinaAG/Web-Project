@@ -1,23 +1,23 @@
 
 <div id="myModal" class="modal">
 
-        <!-- Modal content -->
+        <!-- Modal content -->  
     <div class="modal-content">
           <input type="hidden">
           <span id="modalClose">&times;</span>
           <div id="feedback">
-                <span class="starFive"> ★ 
-                    <span class="starFour"> ★ 
-                        <span class="starThree"> ★ 
-                            <span class="starTwo"> ★ 
-                                 <span class="star"> ★ 
+                <span id="five" class="starFive" onclick="starsColor('five')"> ★ 
+                    <span id="four" class="starFour" onclick="starsColor('four')"> ★ 
+                        <span id="three" class="starThree" onclick="starsColor('three')"> ★ 
+                            <span id="two" class="starTwo" onclick="starsColor('two')"> ★ 
+                                 <span id="one"class="star" onclick="starsColor('one')"> ★ 
                                  </span>
                             </span>
                         </span>
                     </span>
                 </span>
                 <div class="feedback_comment_container">
-                  <textarea class="feedback_comment_textarea"></textarea>
+                  <textarea class="feedback_comment_textarea" placeholder="Какво е Вашето мнение за нашия стартъп?"></textarea>
                 </div>
                 <button id="feedback_submit" class="btnFeedback" href="#" >Изпрати</button><br/>
         </div>

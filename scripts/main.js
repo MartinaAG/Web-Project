@@ -70,3 +70,13 @@ document.getElementById('size').addEventListener('mouseup', (event) => {
 
 	size.value = 10;
 });
+
+function starsColor(stars) {
+	var x = document.getElementById(stars);
+	
+    if (x.style.color === '') {
+        x.style.color = 'red';
+    } else {
+        x.style.color = '';
+    }
+}
