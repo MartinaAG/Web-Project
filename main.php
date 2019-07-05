@@ -13,6 +13,11 @@
 	</header>
 	
 	<article class="propertableByTag" id="docMain" style="background-color: white; top: 10%;">
+		<form action="upload.php" method="post" enctype="multipart/form-data">
+			Select image to upload:
+			<input type="file" name="fileToUpload" id="fileToUpload">
+			<input type="submit" onclick="uploadImage()" value="Upload Image" name="submit">
+		</form>
 	</article>
 	
 	<footer class="propertableByTag" id="docFooter" style="background-color: gray;">

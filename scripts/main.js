@@ -35,6 +35,13 @@ document.getElementById('color').addEventListener('click', (event) => {
 	input.click();
 });
 
+function uploadImage() {
+	fetch('upload.php', { 
+		method: 'POST'
+	}).then(res => res.text()).then(res => console.log(res));
+
+}
+
 document.getElementById('size').addEventListener('mouseup', (event) => {
 	var size = document.getElementById('size');
 	var target = size.parentElement.parentElement;

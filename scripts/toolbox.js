@@ -95,17 +95,14 @@ function addBtnInSth(target) {
 	var content = document.getElementById("content");
 	content.style.display = "none";
 
-	var close = document.getElementById	("close");
+	var close = document.getElementById	("modalClose");
 
 	close.onclick = function() {
 		modal.style.visibility = "hidden";
 	}
 
-	window.onclick = function(event) {
-		if (event.target == modal) {
-		  modal.style.display = "none";
-		}
-	  
+	modal.onclick = function(event) {
+		  modal.style.display = "none";	  
 	}
 }
 
