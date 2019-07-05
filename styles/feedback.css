@@ -49,6 +49,11 @@
   box-shadow: 0 9px #999;
 }
 
+.feedbackButton {
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
 .feedback_comment_textarea {
   height: 65px;
   border: 1px solid lightgray;
