@@ -109,3 +109,29 @@ function sendFeedback() {
 	}).then(res => res.text())
 	.then(res => console.log(res));
 }
+
+function publish() {
+	var cloned = document.documentElement//.cloneNode(true);
+	removeUnpublished(cloned);
+	console.log(cloned.outerHTML);
+}
+
+function removeUnpublished(node) {
+	for(var i = 0; i < node.children.length; i++) {
+		var child = node.children[i];
+
+		if(child.getAttribute('data-publish') === 'false') {
+			child.remove();
+		}
+
+		if(child.tagName === 'LINK' && child.href) {
+			child.href = child.href.substring(0, child.href.length-4) + "Publish.css"
+		} 
+
+		if(child.tagName === 'SCRIPT' && child.src) {
+			child.src = child.src.substring(0, child.src.length-3) + "Publish.js"
+		}
+
+		removeUnpublished(child);
+	}
+}

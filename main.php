@@ -20,13 +20,13 @@
 	<footer class="propertableByTag" id="docFooter" style="background-color: gray; height: 10%">
 	</footer>
 
-	<aside class="asideSection">
+	<aside class="asideSection" data-publish="false">
 		<?php include('toolbox.html') ?>
 	</aside>
 
 	<?php include('feedback.html') ?>
 
-	<div id="properties">
+	<div id="properties" data-publish="false">
 		<div id="color">&nbsp;</div>
 		<div id="textColor">&nbsp;</div>
 		<input id="color-wheel" type="color" value="#ff0000">
@@ -35,11 +35,11 @@
 
 	<script src="scripts/main.js"></script>
 	<script>
-		addSection('three', 3);
+		/*addSection('three', 3);
 		addSection('three', 3);
 		addSection('three', 3);
 		document.getElementById("docHeader").style.backgroundColor = 'rgb(106, 99, 241)';
-		document.getElementById("docFooter").style.backgroundColor = 'rgb(106, 99, 241)';
+		document.getElementById("docFooter").style.backgroundColor = 'rgb(106, 99, 241)';*/
 	</script>
 </body>
 </html>

@@ -40,6 +40,7 @@ function addTextInSth(target) {
 	
 	var textarea = document.createElement("textarea");
 	textarea.classList.add("input");
+	textarea.setAttribute('data-publish', 'false');
 	parent.appendChild(textarea);
 
 	var p = document.createElement('p');
