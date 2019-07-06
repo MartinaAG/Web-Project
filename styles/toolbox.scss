@@ -130,11 +130,13 @@ aside {
 }
 
 .plusSignImg {
+	margin-bottom: 50%;
 	width: 40%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	background-color: none;
 }
 
 .input {
@@ -154,7 +156,7 @@ textarea.input, p.input {
 }
 
 p.input:hover {
-	color: red;
+	color: red !important;
 	cursor: pointer;
 }
 

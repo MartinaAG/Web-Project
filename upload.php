@@ -17,13 +17,17 @@
     if (!in_array($mimeType, $allowedMimeTypes)) 
         throw new Exception('Only JPEG, PNG and GIFs are allowed');
     
-    // nice! it's a valid image
+    // it's a valid image
     // get file extension (ex: jpg, png) not (.jpg)
     $fileExtention = strtolower(pathinfo($image['name'] ,PATHINFO_EXTENSION));
     // create random name for your image
     $fileName = round(microtime(true)) . mt_rand() . '.' . $fileExtention; // anyfilename.jpg
     // Create the path starting from DOCUMENT ROOT of your website
     $path = 'uploads/' . $fileName;
+
+    if (!file_exists('uploads/')) {
+        mkdir('uploads');
+    }
 
     if (!move_uploaded_file($image['tmp_name'], $path))
         throw new Exception('Error in moving the uploaded file');

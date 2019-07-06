@@ -1,10 +1,4 @@
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -30,7 +24,7 @@ header, article, footer {
 #properties #color-wheel {
   display: none;
 }
-#properties #color {
+#properties #color, #properties #textColor {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -48,8 +42,13 @@ header, footer {
   height: 10%;
 }
 
+.asideSection {
+  position: fixed;
+}
+
 article {
-  height: 80%;
+  min-height: 80%;
+  height: fit-content;
   position: absolute;
   background-color: purple;
 }

@@ -5,7 +5,7 @@ var activeProperties = {
 		'docFooter': ['color', 'size'],
 	},
 	styles: {
-		'text': ['color'],
+		'text': ['textColor'],
 	},
 	get: function(identifier, isTag) {
 		if(isTag) {
@@ -23,14 +23,30 @@ for(var i = 0; i < propertableByTag.length; i++) {
 
 document.getElementById('color-wheel').addEventListener('change', (event) => {
 	var input = document.getElementById('color-wheel');
-	var target = input.parentElement.parentElement;
-	target.style.backgroundColor = input.value;
+	
+	var colorMock = document.getElementById('color');
+	var textColorMock = document.getElementById('textColor');
+	
 
-	var mock = document.getElementById('color');
-	mock.style.backgroundColor = input.value;
+	// if color is active
+	if(colorMock.style.display === 'block') {
+		var target = input.parentElement.parentElement;
+		target.style.backgroundColor = input.value;
+		colorMock.style.backgroundColor = input.value;
+	} else { // if textColor is active
+		var target = input.parentElement.parentElement.querySelector('.text');
+		target.style.color = input.value;
+		textColorMock.style.backgroundColor = input.value;
+	}
+	
 });
 
 document.getElementById('color').addEventListener('click', (event) => {
+	var input = document.getElementById('color-wheel');
+	input.click();
+});
+
+document.getElementById('textColor').addEventListener('click', (event) => {
 	var input = document.getElementById('color-wheel');
 	input.click();
 });
@@ -79,4 +95,17 @@ function starsColor(stars) {
     } else {
         x.style.color = '';
     }
+}
+
+function sendFeedback() {
+	var textarea = document.getElementById('feedbackContent');
+
+	var formData = new FormData();
+	formData.set('content', textarea.value);
+
+	fetch('sendFeedback.php', {
+		method: 'post',
+		body: formData
+	}).then(res => res.text())
+	.then(res => console.log(res));
 }
