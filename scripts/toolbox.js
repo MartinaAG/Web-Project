@@ -43,6 +43,7 @@ function addTextInSth(target) {
 
 	var p = document.createElement('p');
 	p.classList.add("input");
+	p.classList.add("text");
 	p.style.display = "none";
 	parent.appendChild(p);
 
@@ -56,6 +57,8 @@ function addTextInSth(target) {
 		textarea.style.display = "none";
 		p.style.display = "block";
 	});
+
+	attachPropertiesEvents(parent, 'text', false);
 
 	p.addEventListener("click", function() {
 		textarea.style.display = "block";
@@ -110,7 +113,6 @@ function addBtnInSth(target) {
 	button.classList.add("input");
 	button.setAttribute('data-properties-index', 'text');
 	a.appendChild(button);
-	attachPropertiesEvents(target.parentElement, 'text', false);
 	var content = document.getElementById("content");
 	content.style.display = "none";
 
@@ -131,7 +133,12 @@ function attachPropertiesEvents(realTarget, identifier, isTag) {
 		
 		// 	return;
 		// }
+
 		var target = event.target;
+		if(target != realTarget) {
+			return;
+		}
+
 
 		var properties = document.getElementById('properties');
 		var activeProps = activeProperties.get(identifier, isTag);

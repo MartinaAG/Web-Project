@@ -131,7 +131,7 @@ textarea.input, p.input {
 }
 
 p.input:hover {
-  color: red;
+  color: red !important;
   cursor: pointer;
 }
 

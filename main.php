@@ -30,6 +30,7 @@
 
 	<div id="properties">
 		<div id="color">&nbsp;</div>
+		<div id="textColor">&nbsp;</div>
 		<input id="color-wheel" type="color" value="#ff0000">
 		<input id="size" type="number" value="10">
 	</div>
