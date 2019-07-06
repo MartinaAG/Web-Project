@@ -3,11 +3,12 @@
         <input type="hidden">
         <span id="modalClose">&times;</span>
         <div id="feedback">
-            <span id="five" class="starFive" onclick="starsColor(this)"> ★ 
-                <span id="four" class="starFour" onclick="starsColor(this)"> ★ 
-                    <span id="three" class="starThree" onclick="starsColor(this)"> ★ 
-                        <span id="two" class="starTwo" onclick="starsColor(this)"> ★ 
-                                <span id="one"class="star" onclick="starsColor(this)"> ★ 
+            <input type="hidden" id="numberOfStars" value="0">
+            <span id="five" class="starFive" onclick="starsColor(this, 1)"> ★ 
+                <span id="four" class="starFour" onclick="starsColor(this, 2)"> ★ 
+                    <span id="three" class="starThree" onclick="starsColor(this, 3)"> ★ 
+                        <span id="two" class="starTwo" onclick="starsColor(this, 4)"> ★ 
+                                <span id="one"class="star" onclick="starsColor(this, 5)"> ★ 
                                 </span>
                         </span>
                     </span>
