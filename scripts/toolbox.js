@@ -15,11 +15,11 @@ function addSection(className, numberOfSth) {
 	docMain.appendChild(layout, null);
 }
 
-
 function addImage(where) { 
 	var img = document.createElement("img");
 	img.classList.add('plusSignImg');
 	img.classList.add('dropbtn');
+	img.setAttribute('data-publish', 'false');
 	img.src = "images/plusSign.png"; 
 	where.appendChild(img);
 	img.addEventListener("mouseover", function() {
@@ -106,12 +106,8 @@ function addBtnInSth(target) {
 	var button = document.createElement("button");
 	button.innerText = "Обратна връзка";
 	button.classList = "feedbackButton";
-	var modal = document.getElementById('myModal');
-    
-	button.onclick = function() { 
-		modal.style.visibility = "visible";
-		modal.children[0].style.top = '50px';
-	}
+
+	button.setAttribute('onclick', 'openModal();');
 	button.classList.add("input");
 	button.setAttribute('data-properties-index', 'text');
 	a.appendChild(button);
@@ -119,11 +115,7 @@ function addBtnInSth(target) {
 	content.style.display = "none";
 
 	var close = document.getElementById	("modalClose");
-
-	close.onclick = function() {
-		modal.style.visibility = "hidden";
-	}
-
+	close.setAttribute('onclick', 'closeModal();');
 }
 
 function attachPropertiesEvents(realTarget, identifier, isTag) {

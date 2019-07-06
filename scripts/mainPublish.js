@@ -20,3 +20,14 @@ function sendFeedback() {
 	}).then(res => res.text())
 	.then(res => console.log(res));
 }
+
+function openModal() {
+	var modal = document.getElementById('myModal');
+	modal.style.visibility = 'visible';
+	modal.children[0].style.top = '50px';
+}
+
+function closeModal() {
+	var modal = document.getElementById('myModal');
+	modal.style.visibility = "hidden";
+}

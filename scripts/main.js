@@ -27,7 +27,6 @@ document.getElementById('color-wheel').addEventListener('change', (event) => {
 	var colorMock = document.getElementById('color');
 	var textColorMock = document.getElementById('textColor');
 	
-
 	// if color is active
 	if(colorMock.style.display === 'block') {
 		var target = input.parentElement.parentElement;
@@ -114,27 +113,56 @@ function sendFeedback() {
 }
 
 function publish() {
-	var cloned = document.documentElement//.cloneNode(true);
-	removeUnpublished(cloned);
-	console.log(cloned.outerHTML);
+	var cloned = document.documentElement.cloneNode(true);
+	var images = [];
+	removeUnpublished(cloned, images);
+	
+	var formData = new FormData();
+	formData.set('html', cloned.outerHTML);
+	formData.set('images', images.join('|'));
+
+	fetch('publish.php', {
+		method: 'post',
+		body: formData
+	}).then(res => res.text())
+		.then(res => console.log(res));
 }
 
-function removeUnpublished(node) {
+function removeUnpublished(node, images) {
 	for(var i = 0; i < node.children.length; i++) {
 		var child = node.children[i];
 
 		if(child.getAttribute('data-publish') === 'false') {
 			child.remove();
+			i--;
+			continue;
 		}
 
 		if(child.tagName === 'LINK' && child.href) {
-			child.href = child.href.substring(0, child.href.length-4) + "Publish.css"
-		} 
-
-		if(child.tagName === 'SCRIPT' && child.src) {
-			child.src = child.src.substring(0, child.src.length-3) + "Publish.js"
+			var name = child.href.substring(child.href.lastIndexOf('/') + 1);
+			name = name.substring(0, name.length-4);
+			child.href = 'styles/' + name + 'Publish.css';
+		} else if(child.tagName === 'SCRIPT' && child.src) {
+			var name = child.src.substring(child.src.lastIndexOf('/') + 1);
+			name = name.substring(0, name.length-3);
+			child.src = 'scripts/' + name + 'Publish.js';
+		} else if(child.tagName === 'DIV' && child.style.backgroundImage) {
+			var imageURL = child.style.backgroundImage;
+			imageURL = imageURL.substring(5, imageURL.length - 2);
+			images.push(imageURL);
 		}
 
-		removeUnpublished(child);
+		removeUnpublished(child, images);
 	}
+}
+
+function openModal() {
+	var modal = document.getElementById('myModal');
+	modal.style.visibility = 'visible';
+	modal.children[0].style.top = '50px';
+}
+
+function closeModal() {
+	var modal = document.getElementById('myModal');
+	modal.style.visibility = "hidden";
 }

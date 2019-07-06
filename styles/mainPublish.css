@@ -6,7 +6,7 @@ html, body {
 
 header, article, footer {
   width: 70%;
-  left: 10%;
+  left: 15%;
   margin: auto;
   background-color: lightgreen;
   position: relative;
@@ -41,4 +41,4 @@ footer {
   height: 100%;
 }
 
-/*# sourceMappingURL=mainPublish.css.map */
+/*# sourceMappingURL=mainpublish.css.map */
