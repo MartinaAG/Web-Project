@@ -9,15 +9,15 @@
 	<link rel="stylesheet" href="styles/feedback.css">
 </head>
 <body>
-	<header class="propertableByTag" id="docHeader" style="background-color: gray; height: 10%">
+	<header class="propertableByTag" id="docHeader" style="background-color: rgb(158, 158, 158); height: 10%">
 		
 	</header>
 	
-	<article class="propertableByTag" id="docMain" style="background-color: white; top: 10%; bottom: 12%">
+	<article class="propertableByTag" id="docMain" style="background-color: rgb(255, 255, 255); top: 10%;">
 		
 	</article>
 	
-	<footer class="propertableByTag" id="docFooter" style="background-color: gray; height: 10%">
+	<footer class="propertableByTag" id="docFooter" style="background-color: rgb(158, 158, 158); height: 10%">
 	</footer>
 
 	<aside class="asideSection" data-publish="false">
@@ -34,8 +34,9 @@
 	</div>
 
 	<script src="scripts/main.js"></script>
-	<script>
-		/*addSection('three', 3);
+	<script data-publish="false">
+		/*// add for template 1:
+		addSection('three', 3);
 		addSection('three', 3);
 		addSection('three', 3);
 		document.getElementById("docHeader").style.backgroundColor = 'rgb(106, 99, 241)';

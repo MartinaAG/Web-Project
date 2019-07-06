@@ -171,3 +171,22 @@ function closeModal() {
 	var modal = document.getElementById('myModal');
 	modal.style.visibility = "hidden";
 }
+
+function componentToHex(c) {
+	var hex = c.toString(16);
+	return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+	return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function rgbStringToHex(rgbString) {
+	var firstComma = rgbString.indexOf(',');
+	var r = parseInt(rgbString.substring(rgbString.indexOf('(')+1, firstComma));
+	var secondComma = rgbString.indexOf(',', firstComma + 1);
+	var g = parseInt(rgbString.substring(firstComma+1, secondComma).trim());
+	var b = parseInt(rgbString.substring(secondComma+1, rgbString.length-1).trim());
+
+	return rgbToHex(r,g,b);
+}

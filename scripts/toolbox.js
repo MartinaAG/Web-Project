@@ -146,6 +146,9 @@ function attachPropertiesEvents(realTarget, identifier, isTag) {
 		target.appendChild(properties);
 		properties.style.display = "block";
 
+		var inputColor = document.getElementById('color-wheel');
+		inputColor.value = rgbStringToHex(target.style.backgroundColor);
+
 		var mock = document.getElementById('color');
 		mock.style.backgroundColor = target.style.backgroundColor;
 
