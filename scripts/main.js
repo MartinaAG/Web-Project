@@ -87,14 +87,14 @@ document.getElementById('size').addEventListener('mouseup', (event) => {
 	size.value = 10;
 });
 
-function starsColor(stars) {
-	var x = document.getElementById(stars);
-	
-    if (x.style.color === '') {
-        x.style.color = 'red';
+function starsColor(stars) {	
+
+    if (stars.style.color === '') {
+        stars.style.color = 'red';
     } else {
-        x.style.color = '';
-    }
+        stars.style.color = '';
+	}
+	
 }
 
 function sendFeedback() {
@@ -108,4 +108,8 @@ function sendFeedback() {
 		body: formData
 	}).then(res => res.text())
 	.then(res => console.log(res));
+
+	var modal = document.getElementById('myModal');
+	modal.style.visibility = "hidden";
+
 }
