@@ -109,6 +109,19 @@ aside {
 		}
 	}
 
+	&.hdft {
+		grid-template-columns: auto auto auto;
+
+		div.sth {
+			width: 50%;
+			padding-top: 35%;
+			& .plusSignImg {
+				top: 30%;
+			}
+		}
+
+	}
+
 	&.three-two-row {
 		grid-template-columns: auto auto;
 

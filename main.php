@@ -35,11 +35,6 @@
 
 	<script src="scripts/main.js"></script>
 	<script>
-		/*addSection('three', 3);
-		addSection('three', 3);
-		addSection('three', 3);
-		document.getElementById("docHeader").style.backgroundColor = 'rgb(106, 99, 241)';
-		document.getElementById("docFooter").style.backgroundColor = 'rgb(106, 99, 241)';*/
 		addSection('hdft', 3, 'docHeader');
 		addSection('hdft', 3, 'docFooter');
 	</script>

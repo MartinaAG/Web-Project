@@ -87,6 +87,16 @@ aside #toolbox #layouts {
   width: 80%;
   padding-top: 54.4%;
 }
+.layout.hdft {
+  grid-template-columns: auto auto auto;
+}
+.layout.hdft div.sth {
+  width: 50%;
+  padding-top: 35%;
+}
+.layout.hdft div.sth .plusSignImg {
+  top: 30%;
+}
 .layout.three-two-row {
   grid-template-columns: auto auto;
 }
