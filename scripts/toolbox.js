@@ -124,18 +124,10 @@ function addBtnInSth(target) {
 		modal.style.visibility = "hidden";
 	}
 
-	// modal.onclick = function(event) {
-	// 	  modal.style.display = "none";	  
-	// }
 }
 
 function attachPropertiesEvents(realTarget, identifier, isTag) {
 	realTarget.addEventListener('mouseover', (event) => {
-		// if(event.target.getAttribute('data-properties-index') != identifier) {
-		
-		// 	return;
-		// }
-
 		var target = event.target;
 		if(target != realTarget) {
 			return;
