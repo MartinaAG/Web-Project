@@ -29,8 +29,9 @@ function addImage(where) {
 		content.style.display = "block";
 		img.style.opacity = "0";
 	})
-	img.addEventListener("mouseleave", function() {
+	where.addEventListener("mouseleave", function() {
 		img.style.opacity = "1";
+		content.style.display = "none";
 	} )
 }
 

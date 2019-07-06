@@ -26,8 +26,6 @@
 
 	<?php include('feedback.html') ?>
 
-
-
 	<div id="properties">
 		<div id="color">&nbsp;</div>
 		<input id="color-wheel" type="color" value="#ff0000">
@@ -35,5 +33,12 @@
 	</div>
 
 	<script src="scripts/main.js"></script>
+	<script>
+		addSection('three', 3);
+		addSection('three', 3);
+		addSection('three', 3);
+		document.getElementById("docHeader").style.backgroundColor = 'rgb(106, 99, 241)';
+		document.getElementById("docFooter").style.backgroundColor = 'rgb(106, 99, 241)';
+	</script>
 </body>
 </html>
