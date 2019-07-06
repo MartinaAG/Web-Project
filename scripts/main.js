@@ -130,7 +130,11 @@ function publish() {
 		method: 'post',
 		body: formData
 	}).then(res => res.text())
-		.then(res => console.log(res));
+		.then(res => {
+			var path = location.href;
+			path = path.substring(0, path.lastIndexOf('/') + 1);
+			window.open(path + res, '_blank');
+		});
 }
 
 function removeUnpublished(node, images) {

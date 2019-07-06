@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2019 at 10:04 PM
+-- Generation Time: Jul 06, 2019 at 11:01 PM
 -- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,29 +36,31 @@ CREATE TABLE IF NOT EXISTS `feedbacks` (
   `stars` int(11) NOT NULL,
   `content` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `feedbacks`
+-- Table structure for table `templates`
 --
 
-INSERT INTO `feedbacks` (`id`, `stars`, `content`) VALUES
-(1, 0, '?'),
-(2, 0, '?'),
-(3, 0, 'testss'),
-(4, 0, 'martiiiiiiiiiiiiiiiiiiiii'),
-(5, 0, 'dhsbd'),
-(6, 0, 'bebsi'),
-(7, 0, 'Qkuuu'),
-(8, 0, '1'),
-(9, 1, 'Qkooaaoaooao'),
-(10, 1, 'dsmna'),
-(11, 1, 'Marti debugva s Bebsi'),
-(12, 1, 'Marti probva pak'),
-(13, 0, 'Hlqb i mravka'),
-(14, 0, 'Hlqb i mravka'),
-(15, 4, 'Ari we'),
-(16, 4, 'daaaaaaa');
+DROP TABLE IF EXISTS `templates`;
+CREATE TABLE IF NOT EXISTS `templates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `number` int(11) NOT NULL,
+  `script` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `templates`
+--
+
+INSERT INTO `templates` (`id`, `number`, `script`) VALUES
+(1, 1, 'addSection(\'one\', 1, \'docMain\');\r\n		addSection(\'two\', 2, \'docMain\');\r\n		document.getElementById(\"docHeader\").style.backgroundColor = \'rgb(152, 206, 90)\';\r\n		document.getElementById(\"docFooter\").style.backgroundColor = \'rgb(152, 206, 90)\';'),
+(2, 2, 'addSection(\'three\', 3, \'docMain\');\r\n			addSection(\'three\', 3, \'docMain\');\r\n			addSection(\'three\', 3, \'docMain\');\r\n			document.getElementById(\"docHeader\").style.backgroundColor = \'rgb(106, 99, 241)\';\r\n			document.getElementById(\"docMain\").style.backgroundColor = \'rgb(255, 215, 235)\';\r\n			document.getElementById(\"docFooter\").style.backgroundColor = \'rgb(106, 99, 241)\';'),
+(3, 3, 'addSection(\'three-two-row\', 3, \'docMain\');\r\n			addSection(\'three\', 3, \'docMain\');\r\n\r\n			document.getElementById(\"docHeader\").style.backgroundColor = \'rgb(0, 0, 255)\';\r\n			document.getElementById(\"docMain\").style.backgroundColor = \'rgb(172, 214, 255)\';\r\n			document.getElementById(\"docFooter\").style.backgroundColor = \'rgb(0, 0, 255)\';'),
+(4, 4, 'addSection(\'right-three-two-column\', 3, \'docMain\');\r\n		addSection(\'right-three-two-column\', 3, \'docMain\');\r\n		document.getElementById(\"docHeader\").style.backgroundColor = \'rgb(92, 218, 224)\';\r\n		document.getElementById(\"docMain\").style.backgroundColor = \'rgb(219, 255, 255)\';\r\n		document.getElementById(\"docFooter\").style.backgroundColor = \'rgb(92, 218, 224)\';');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

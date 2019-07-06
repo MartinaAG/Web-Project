@@ -50,4 +50,6 @@ foreach ($images as $image) {
 	rename($image, $path . '/' . $image);
 }
 
+echo $filePath;
+
 ?>
