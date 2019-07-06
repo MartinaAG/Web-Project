@@ -1,0 +1,52 @@
+// for green template 
+
+	<script>
+		addSection('one', 1, 'docMain');
+		addSection('two', 2, 'docMain');
+		document.getElementById("docHeader").style.backgroundColor = 'rgb(152, 206, 90)';
+		document.getElementById("docFooter").style.backgroundColor = 'rgb(152, 206, 90)';
+		addSection('hdft', 3, 'docHeader');
+		addSection('hdft', 3, 'docFooter');
+	</script>
+
+
+// for purple template 
+
+		<script>
+			addSection('three', 3, 'docMain');
+			addSection('three', 3, 'docMain');
+			addSection('three', 3, 'docMain');
+			document.getElementById("docHeader").style.backgroundColor = 'rgb(106, 99, 241)';
+			document.getElementById("docMain").style.backgroundColor = 'rgb(255, 215, 235)';
+			document.getElementById("docFooter").style.backgroundColor = 'rgb(106, 99, 241)';
+			addSection('hdft', 3, 'docHeader');
+			addSection('hdft', 3, 'docFooter');
+		</script>
+
+
+// for blue
+
+	<script>
+			addSection('three-two-row', 3, 'docMain');
+			addSection('three', 3, 'docMain');
+
+			document.getElementById("docHeader").style.backgroundColor = 'rgb(0, 0, 255)';
+			document.getElementById("docMain").style.backgroundColor = 'rgb(172, 214, 255)';
+			document.getElementById("docFooter").style.backgroundColor = 'rgb(0, 0, 255)';
+			addSection('hdft', 3, 'docHeader');
+			addSection('hdft', 3, 'docFooter');
+	</script>
+
+
+
+// for sky blue 
+
+<script>
+		addSection('right-three-two-column', 3, 'docMain');
+		addSection('right-three-two-column', 3, 'docMain');
+		document.getElementById("docHeader").style.backgroundColor = 'rgb(92, 218, 224)';
+		document.getElementById("docMain").style.backgroundColor = 'rgb(219, 255, 255)';
+		document.getElementById("docFooter").style.backgroundColor = 'rgb(92, 218, 224)';
+		addSection('hdft', 3, 'docHeader');
+		addSection('hdft', 3, 'docFooter');
+</script>
