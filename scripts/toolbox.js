@@ -1,4 +1,4 @@
-function addSection(className, numberOfSth) {
+function addSection(className, numberOfSth, articleID) {
 	var layout = document.createElement('div');
 	layout.classList.add('layout');
 	layout.classList.add(className);
@@ -11,8 +11,8 @@ function addSection(className, numberOfSth) {
 		layout.appendChild(div, null);
 	}
 
-	var docMain = document.getElementById('docMain');
-	docMain.appendChild(layout, null);
+	var doc = document.getElementById(articleID);
+	doc.appendChild(layout, null);
 }
 
 function addImage(where) { 

@@ -39,6 +39,31 @@ aside #toolbox #layouts {
   background-repeat: no-repeat;
 }
 
+.publishButton {
+  margin: auto;
+  margin-top: 35px;
+  width: 180px;
+  height: 100px;
+  padding: 15px 25px;
+  font-size: 130%;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #ce5a80;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #9b7f8b;
+}
+.publishButton:hover {
+  background-color: #8d2863;
+  transform: scale(1.01);
+}
+.publishButton:hover div.sth {
+  border: 1px solid gray;
+}
+
 .layout {
   margin: 10px auto;
   width: 85%;

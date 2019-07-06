@@ -48,6 +48,33 @@ aside {
 	}
 }
 
+.publishButton {
+	margin: auto;
+	margin-top: 35px;
+	width: 180px;
+	height: 100px;
+    padding: 15px 25px;
+    font-size: 130%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none; 
+    color: #fff;
+    background-color: rgb(206, 90, 128);
+    border: none;
+    border-radius: 15px;
+	box-shadow: 0 6px rgb(155, 127, 139);
+	
+	&:hover {
+		background-color: rgb(141, 40, 99);
+		transform: scale(1.01);
+
+		& div.sth {
+			border: 1px solid gray;
+		}
+	}
+}
+
 .layout {
 	margin: 10px auto;
 	width: 85%;
@@ -123,7 +150,9 @@ aside {
 			}
 		}
 	}
+
 }
+
 
 .layout .sth {
 	position: relative;
@@ -191,4 +220,6 @@ p.input:hover {
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
+
 

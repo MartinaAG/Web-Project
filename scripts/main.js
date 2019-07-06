@@ -86,21 +86,26 @@ document.getElementById('size').addEventListener('mouseup', (event) => {
 	size.value = 10;
 });
 
-function starsColor(stars) {	
+function starsColor(stars, numberOfStars) {	
 
     if (stars.style.color === '') {
         stars.style.color = 'red';
     } else {
         stars.style.color = '';
 	}
-	
+	var node = document.getElementById("numberOfStars");
+	if(node.value < numberOfStars){
+		 node.value = numberOfStars;
+	}
 }
 
 function sendFeedback() {
 	var textarea = document.getElementById('feedbackContent');
+	var numberOfStars = document.getElementById('numberOfStars');
 
 	var formData = new FormData();
 	formData.set('content', textarea.value);
+	formData.set('numberOfStars', numberOfStars.value);
 
 	fetch('sendFeedback.php', {
 		method: 'post',
