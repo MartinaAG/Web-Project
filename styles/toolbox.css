@@ -68,6 +68,7 @@ aside #toolbox #layouts {
   margin: 10px auto;
   width: 85%;
   display: grid;
+  position: relative;
 }
 .layout div.sth {
   margin: auto;

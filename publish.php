@@ -38,6 +38,7 @@ copy('scripts/mainPublish.js', $path . '/scripts/mainPublish.js');
 copy('styles/mainPublish.css', $path . '/styles/mainPublish.css');
 copy('styles/feedbackPublish.css', $path . '/styles/feedbackPublish.css');
 copy('styles/toolboxPublish.css', $path . '/styles/toolboxPublish.css');
+copy('export.php', $path . '/export.php');
 
 $imagesStr = $_POST['images'];
 $images = explode("|", $imagesStr);

@@ -39,3 +39,25 @@ function closeModal() {
 	var modal = document.getElementById('myModal');
 	modal.style.visibility = "hidden";
 }
+
+var exportButton = document.createElement('div');
+exportButton.classList.add('feedbackButton');
+exportButton.classList.add('exportButton');
+exportButton.innerText = "Експорт";
+exportButton.onclick = function () {
+	var form = document.createElement('form');
+	form.action = 'export.php';
+	form.method = 'post';
+
+	var input = document.createElement('input');
+	input.name = "folder";
+	var folderPath = location.href.substring(location.href.indexOf('published'));
+	folderPath = folderPath.substring(0, folderPath.lastIndexOf('/'));
+	input.value = folderPath;
+
+	form.appendChild(input);
+	document.documentElement.appendChild(form);
+	form.submit();
+};
+
+document.documentElement.appendChild(exportButton);

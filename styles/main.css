@@ -30,9 +30,15 @@ header, article, footer {
   border-radius: 50%;
   background-color: lightgreen;
   border: 3px solid black;
+  cursor: pointer;
 }
 #properties #align {
   height: 30px;
+  cursor: pointer;
+}
+#properties #removeLayout {
+  height: 30px;
+  cursor: pointer;
 }
 #properties #size {
   width: 20px;

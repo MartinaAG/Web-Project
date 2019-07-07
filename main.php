@@ -32,10 +32,11 @@
 		<input id="color-wheel" type="color" value="#ff0000">
 		<input id="size" type="number" value="10">
 		<img id="align" src="images/align.png">
+		<img id="removeLayout" src="images/remove.png">
 	</div>
 
 	<script src="scripts/main.js"></script>
-	<script>
+	<script data-publish="false">
 		<?php
 			if($_GET && $_GET['template'] && $_GET['template'] != "00") {
 				$number = $_GET['template'];

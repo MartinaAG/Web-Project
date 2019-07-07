@@ -32,10 +32,17 @@ header, article, footer {
 		border-radius: 50%;
 		background-color: lightgreen;
 		border: 3px solid black;
+		cursor: pointer;
 	}
 
 	#align {
 		height: 30px;
+		cursor: pointer;
+	}
+
+	#removeLayout {
+		height: 30px;
+		cursor: pointer;
 	}
 
 	#size {

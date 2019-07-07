@@ -200,3 +200,11 @@ textarea.input, p.input {
 	display: block;
 }
 
+.exportButton {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	font-size: 2em;
+	z-index: 100;
+	background-color: rgb(133, 13, 13) !important;
+}

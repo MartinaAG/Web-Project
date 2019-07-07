@@ -4,6 +4,8 @@ function addSection(className, numberOfSth, articleID) {
 	layout.classList.add(className);
 	layout.classList.add('dropdown');
 
+	attachPropertiesEvents(layout, 'layout', false);
+
 	for(var i = 0; i < numberOfSth; i++) {
 		var div = document.createElement('div');
 		div.classList.add('sth');

@@ -6,6 +6,7 @@ var activeProperties = {
 	},
 	styles: {
 		'text': ['textColor', 'align'],
+		'layout': ['removeLayout'],
 	},
 	get: function(identifier, isTag) {
 		if(isTag) {
@@ -62,6 +63,27 @@ document.getElementById('align').addEventListener('click', (event) => {
 	} else if(target.style.textAlign === 'justify') {
 		target.style.textAlign = 'left';
 	} 
+});
+
+document.getElementById('removeLayout').addEventListener('click', (event) => {
+	var input = document.getElementById('removeLayout');
+	var target = input.parentElement.parentElement;
+	if(confirm("Сигурни ли сте, че искате да изтриете целия ред?")) {
+		var properties = target.querySelector('#properties');
+		var content = target.querySelector('#content');
+
+		var outside = target.parentElement;
+		// move props outside
+		outside.appendChild(properties);
+		properties.style.display = "none";
+
+		if(content != null) {
+			outside.appendChild(content);
+			content.style.display = "none";
+		}
+
+		target.remove();
+	}
 });
 
 function uploadImage(target) {
