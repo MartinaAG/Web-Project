@@ -42,12 +42,14 @@ copy('styles/toolboxPublish.css', $path . '/styles/toolboxPublish.css');
 $imagesStr = $_POST['images'];
 $images = explode("|", $imagesStr);
 
-if (count($images) > 0 && !file_exists($path . '/uploads')) {
-	mkdir($path . '/uploads');
-}
+if (strlen($imagesStr) > 0) {
+	if(!file_exists($path . '/uploads')) {
+		mkdir($path . '/uploads');
+	}
 
-foreach ($images as $image) {
-	rename($image, $path . '/' . $image);
+	foreach ($images as $image) {
+		rename($image, $path . '/' . $image);
+	}
 }
 
 echo $filePath;

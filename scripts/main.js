@@ -5,7 +5,7 @@ var activeProperties = {
 		'docFooter': ['color', 'size'],
 	},
 	styles: {
-		'text': ['textColor'],
+		'text': ['textColor', 'align'],
 	},
 	get: function(identifier, isTag) {
 		if(isTag) {
@@ -48,6 +48,20 @@ document.getElementById('color').addEventListener('click', (event) => {
 document.getElementById('textColor').addEventListener('click', (event) => {
 	var input = document.getElementById('color-wheel');
 	input.click();
+});
+
+document.getElementById('align').addEventListener('click', (event) => {
+	var input = document.getElementById('align');
+	var target = input.parentElement.parentElement.querySelector('.text');
+	if(target.style.textAlign === '' || target.style.textAlign === 'left') {
+		target.style.textAlign = 'center';
+	} else if(target.style.textAlign === 'center') {
+		target.style.textAlign = 'right';
+	} else if(target.style.textAlign === 'right') {
+		target.style.textAlign = 'justify';
+	} else if(target.style.textAlign === 'justify') {
+		target.style.textAlign = 'left';
+	} 
 });
 
 function uploadImage(target) {
@@ -134,6 +148,8 @@ function publish() {
 			var path = location.href;
 			path = path.substring(0, path.lastIndexOf('/') + 1);
 			window.open(path + res, '_blank');
+
+			window.location.href = 'index.html';
 		});
 }
 

@@ -6,7 +6,7 @@ for (let i = 0; i < templates.length; i++) {
 		
 		var form = document.createElement('form');
 		form.action = 'main.php';
-		form.method = 'post';
+		form.method = 'get';
 
 		var input = document.createElement('input');
 		input.name = "template";

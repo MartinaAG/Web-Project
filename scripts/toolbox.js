@@ -125,6 +125,7 @@ function attachPropertiesEvents(realTarget, identifier, isTag) {
 			return;
 		}
 
+		event.target.style.zIndex = "10";
 
 		var properties = document.getElementById('properties');
 		var activeProps = activeProperties.get(identifier, isTag);
@@ -161,5 +162,6 @@ function attachPropertiesEvents(realTarget, identifier, isTag) {
 
 	realTarget.addEventListener('mouseleave', (event) => {
 		document.getElementById('properties').style.display = "none";
+		event.target.style.zIndex = "";
 	});
 }

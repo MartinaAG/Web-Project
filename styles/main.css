@@ -31,6 +31,9 @@ header, article, footer {
   background-color: lightgreen;
   border: 3px solid black;
 }
+#properties #align {
+  height: 30px;
+}
 #properties #size {
   width: 20px;
   color: white;

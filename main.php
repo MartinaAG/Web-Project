@@ -31,13 +31,14 @@
 		<div id="textColor">&nbsp;</div>
 		<input id="color-wheel" type="color" value="#ff0000">
 		<input id="size" type="number" value="10">
+		<img id="align" src="images/align.png">
 	</div>
 
 	<script src="scripts/main.js"></script>
 	<script>
 		<?php
-			if($_POST && $_POST['template'] && $_POST['template'] != "00") {
-				$number = $_POST['template'];
+			if($_GET && $_GET['template'] && $_GET['template'] != "00") {
+				$number = $_GET['template'];
 
 				require_once('database.php');
 				$connection =  (new Database())->getPDO();
