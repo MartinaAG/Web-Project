@@ -1,0 +1,22 @@
+main img {
+	width: 18%;
+	margin: 0px 18px;
+	border: 1px solid rgb(14, 15, 54);
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 2px 2px 2px;
+	transition: background-color 0.25s, transform 0.25s;
+
+	&:hover {
+		background-color: lightgrey;
+		transform: scale(1.01);
+
+		& div.sth {
+			border: 1px solid gray;
+		}
+	}
+}
+
+h1 {
+	text-align: center
+}
