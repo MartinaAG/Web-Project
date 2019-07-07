@@ -35,6 +35,20 @@
 
 	<script src="scripts/main.js"></script>
 	<script>
+		<?php
+			if($_POST && $_POST['template'] && $_POST['template'] != "00") {
+				$number = $_POST['template'];
+
+				require_once('database.php');
+				$connection =  (new Database())->getPDO();
+
+				$stmt = $connection->prepare("SELECT script FROM templates WHERE number = ?");
+				$stmt->execute([$number]);
+				$rows = $stmt->fetchALL(PDO::FETCH_NUM);
+
+				echo $rows[0][0];
+			}
+		?>
 		addSection('hdft', 3, 'docHeader');
 		addSection('hdft', 3, 'docFooter');
 	</script>
